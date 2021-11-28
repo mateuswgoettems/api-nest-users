@@ -7,9 +7,9 @@ services:
         expose:
             - 5432
         environment:
-            - POSTGRES_USER=nestjs
-            - POSTGRES_PASSWORD=IrishCoffe@21
-            - POSTGRES_DB=nestjs
+            - POSTGRES_USER=$(DB_USER)
+            - POSTGRES_PASSWORD=$(DB_PASSWD)
+            - POSTGRES_DB=$(DATABASE)
         volumes:
             - ./database:/var/lib/postgresql/data
         ports:
@@ -25,5 +25,5 @@ services:
         volumes:
             - .:/home/node/app
         ports:
-            - "4321:3000"
-        command: sh -c "cd /home/node/app && npm install yarn && yarn install && yarn start:dev"
+            - "3000:3000"
+        command: sh -c "cd /home/node/app && npm install yarn && yarn && yarn start:dev"
