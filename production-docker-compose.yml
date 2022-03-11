@@ -1,7 +1,7 @@
 version: '3'
 services:
   api-portfolio:
-    container_name: api-portfolio
+    container_name: template-users-api
     restart: always
     image: mateuswelter01/projects:template-users-api
     networks:
