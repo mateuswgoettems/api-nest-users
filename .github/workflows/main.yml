@@ -65,7 +65,7 @@ jobs:
     steps:
       - name: pull the image
         run: |
-          echo "$SSH_USER
+          echo $SSH_USER
       # - name: pull github-repository
       #   run: |
       #     ssh $SSH_USER@$DOCKER_MANAGER 'cd /home/projetos/template-users-api; git pull'
