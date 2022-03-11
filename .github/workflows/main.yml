@@ -66,7 +66,9 @@ jobs:
     steps:
       - name: pull image in workers
         run: |
+          sudo su
           /home/ubuntu/deploy-to-swarm.sh
       - name: pull the compose file in manager
         run: |
+          sudo su
           /home/ubuntu/docker-start.sh
