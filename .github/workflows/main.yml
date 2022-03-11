@@ -65,4 +65,4 @@ jobs:
     steps:
       - name: check ssh
         run: |
-          ssh -V
+          ssh root@144.22.232.227 'docker pull mateuswelter01/projects:template-users-api'
