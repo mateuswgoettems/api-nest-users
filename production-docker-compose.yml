@@ -1,0 +1,20 @@
+version: '3'
+services:
+  api-portfolio:
+    container_name: api-portfolio
+    restart: always
+    image: mateuswelter01/projects:template-users-api
+    networks:
+      - templates
+    ports:
+      - 3002:3000
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == worker]
+      restart_policy:
+        condition: on-failure
+
+networks:
+  templates:
+    driver: overlay
