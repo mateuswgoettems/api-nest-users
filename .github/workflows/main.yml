@@ -24,6 +24,7 @@ jobs:
 
   push_to_Docker_Hub:
     runs-on: ubuntu-latest
+    needs: [build]
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
@@ -48,6 +49,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USER }}/projects:template-users-api
   deploy:
     runs-on: [self-hosted, linux, x64]
+    needs: [push_to_Docker_Hub]
     steps:
       - name: connect to deploy host
         uses: appleboy/ssh-action@master
