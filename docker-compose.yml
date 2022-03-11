@@ -1,29 +1,29 @@
 version: "3"
 services:
-    postgres:
-        container_name: postgres
-        restart: always
-        image: postgres:latest
-        expose:
-            - 5432
-        environment:
-            - POSTGRES_USER=$DB_USER
-            - POSTGRES_PASSWORD=$DB_PASSWD
-            - POSTGRES_DB=$DATABASE
-        volumes:
-            - ./database:/var/lib/postgresql/data
-        ports:
-            - "5432:5432"
+  postgres:
+    container_name: postgres
+    restart: always
+    image: postgres:latest
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=nestjs
+      - POSTGRES_PASSWORD=IrishCoffe@21
+      - POSTGRES_DB=users
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
-    nest-api:
-        container_name: nest-api
-        restart: always
-        image: node:14.17-alpine
-        build: .
-        expose:
-            - 3000
-        volumes:
-            - .:/home/node/app
-        ports:
-            - "3000:3000"
-        command: sh -c "cd /home/node/app && npm install yarn && yarn && yarn start:dev"
+  # nest-api:
+  #     container_name: nest-api
+  #     restart: always
+  #     image: node:14.17-alpine
+  #     build: .
+  #     expose:
+  #         - 3000
+  #     volumes:
+  #         - .:/home/node/app
+  #     ports:
+  #         - "3000:3000"
+  #     command: sh -c "cd /home/node/app && npm install yarn && yarn && yarn start:dev"

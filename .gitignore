@@ -1,7 +1,6 @@
 # compiled output
 /dist
 /node_modules
-.env
 docker.key
 .vscode
 /database
@@ -36,3 +35,9 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+#Environment files
+.env
+.env.prod
+.env.test
+.env.dev

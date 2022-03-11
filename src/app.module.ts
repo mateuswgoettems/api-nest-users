@@ -11,19 +11,19 @@ import { MailerModule } from '@nestjs-modules/mailer';
 import { mailerConfig } from './configs/mailer.config';
 
 @Module({
-	imports: [
-		TypeOrmModule.forRoot(typeOrmPgConfig),
-		WinstonModule.forRoot(winstonConfig),
-		MailerModule.forRoot(mailerConfig),
-		UsersModule,
-		AuthModule,
-	],
-	controllers: [],
-	providers: [
-		{
-			provide: APP_INTERCEPTOR,
-			useClass: LoggerInterceptor,
-		},
-	],
+  imports: [
+    TypeOrmModule.forRoot(typeOrmPgConfig),
+    WinstonModule.forRoot(winstonConfig),
+    MailerModule.forRoot(mailerConfig),
+    UsersModule,
+    AuthModule,
+  ],
+  controllers: [],
+  providers: [
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: LoggerInterceptor,
+    },
+  ],
 })
-export class AppModule { }
+export class AppModule {}
