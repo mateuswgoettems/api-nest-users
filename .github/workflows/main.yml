@@ -65,11 +65,10 @@ jobs:
     steps:
       - name: pull the image
         run: |
-          echo "$SSH_USER"
-          ssh $SSH_USER@$DOCKER_MANAGER 'docker pull mateuswelter01/projects:template-users-api'
-      - name: pull github-repository
-        run: |
-          ssh $SSH_USER@$DOCKER_MANAGER 'cd /home/projetos/template-users-api; git pull'
-      - name: create/update a swarm
-        run: |
-          ssh $SSH_USER@$DOCKER_MANAGER 'cd /home/projetos/template-users-api/; docker-compose up -d'
+          echo "$SSH_USER
+      # - name: pull github-repository
+      #   run: |
+      #     ssh $SSH_USER@$DOCKER_MANAGER 'cd /home/projetos/template-users-api; git pull'
+      # - name: create/update a swarm
+      #   run: |
+      #     ssh $SSH_USER@$DOCKER_MANAGER 'cd /home/projetos/template-users-api/; docker-compose up -d'
