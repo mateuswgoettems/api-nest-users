@@ -1,6 +1,6 @@
 version: '3'
 services:
-  api-portfolio:
+  template-users-api:
     container_name: template-users-api
     restart: always
     image: mateuswelter01/projects:template-users-api
