@@ -60,13 +60,15 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USER }}/projects:template-users-api
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     needs: [push_to_Docker_Hub]
     steps:
-      - name: connect to deploy host
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{ secrets.USERNAME }}
-          port: ${{ secrets.PORT }}
-          script: ls -la
+      - name: install ssh
+        uses: actions/checkout@v2
+        run: |
+          apt update
+          apt install -y openssh-client
+      - name: deploy-to-swarm
+        uses: actions/checkout@v2
+        run: |
+          ssh -V
