@@ -61,7 +61,7 @@ jobs:
   #         tags: ${{ secrets.DOCKER_USER }}/projects:template-users-api
   deploy:
     runs-on: [self-hosted, linux, x64]
-    needs: [push_to_Docker_Hub]
+    # needs: [push_to_Docker_Hub]
     steps:
       - name: install ssh
         run: |
