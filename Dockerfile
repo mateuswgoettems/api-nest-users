@@ -10,4 +10,4 @@ COPY dist/ .
 
 # COPY .env .
 # 
-CMD ["node", "src/main"]
+CMD ["node", "main"]
