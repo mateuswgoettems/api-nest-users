@@ -8,4 +8,6 @@ RUN yarn --prod
 
 COPY dist/ .
 
+# COPY .env .
+# 
 CMD ["node", "src/main"]

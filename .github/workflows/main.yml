@@ -46,7 +46,12 @@ jobs:
         run: |
           yarn
           yarn build
-
+      - name: Set Environment Variables
+        run: |
+          pwd
+          touch .env
+          echo $MAIL_HOST >> .env
+          cat .env
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
