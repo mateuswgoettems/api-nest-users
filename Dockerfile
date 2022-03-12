@@ -8,4 +8,4 @@ RUN yarn --prod
 
 COPY dist/ .
 
-CMD ["node", "src/main"]
+CMD ["node", "main"]
