@@ -50,7 +50,7 @@ jobs:
         run: |
           pwd
           touch .env
-          echo $MAIL_HOST >> .env
+          echo ${{ secrets.MAIL_USER }}@${{ secrets.MAIL_HOST }} >> .env
           cat .env
       - name: Login to DockerHub
         uses: docker/login-action@v1
