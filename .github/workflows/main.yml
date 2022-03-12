@@ -59,6 +59,7 @@ jobs:
           echo DB_PASSWD=${{ secrets.DB_PASSWD }} >> .env
           echo DATABASE=${{ secrets.DATABASE }} >> .env
           echo MONGO_STRING=${{ secrets.MONGO_STRING }} >> .env
+          cat .env
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
