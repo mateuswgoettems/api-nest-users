@@ -48,10 +48,17 @@ jobs:
           yarn build
       - name: Set Environment Variables
         run: |
-          pwd
           touch .env
-          echo ${{ secrets.MAIL_USER }}@${{ secrets.MAIL_HOST }} >> .env
-          cat .env
+          echo MAIL_HOST=${{ secrets.MAIL_HOST }} >> .env
+          echo MAIL_PORT=${{ secrets.MAIL_PORT }} >> .env
+          echo MAIL_USER=${{ secrets.MAIL_USER }} >> .env
+          echo MAIL_PASS=${{ secrets.MAIL_PASS }} >> .env
+          echo DB_HOST=${{ secrets.DB_HOST }} >> .env
+          echo DB_PORT=${{ secrets.DB_PORT }} >> .env
+          echo DB_USER=${{ secrets.DB_USER }} >> .env
+          echo DB_PASSWD=${{ secrets.DB_PASSWD }} >> .env
+          echo DATABASE=${{ secrets.DATABASE }} >> .env
+          echo MONGO_STRING=${{ secrets.MONGO_STRING }} >> .env
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
