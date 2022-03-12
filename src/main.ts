@@ -8,7 +8,9 @@ import { swaggerConfig } from './configs/swagger.config';
 async function bootstrap() {
   const logger = WinstonModule.createLogger(winstonConfig);
   const app = await NestFactory.create(AppModule, { logger });
-  app.enableCors();
+  app.enableCors({
+    origin: '*',
+  });
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api-doc', app, document);
   await app.listen(3000);
