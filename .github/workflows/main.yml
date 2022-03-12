@@ -71,4 +71,4 @@ jobs:
       - name: pull the compose file in manager
         run: |
           sudo su
-          /home/ubuntu/docker-start.sh
+          /home/ubuntu/scripts/docker-start.sh
