@@ -1,6 +1,14 @@
 import { MailerOptions } from '@nestjs-modules/mailer';
 import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handlebars.adapter';
 import * as path from 'path';
+import { load } from 'ts-dotenv';
+
+const env = load({
+  MAIL_HOST: String,
+  MAIL_PORT: Number,
+  MAIL_USER: String,
+  MAIL_PASS: String,
+});
 
 export const mailerConfig: MailerOptions = {
   template: {
@@ -12,13 +20,13 @@ export const mailerConfig: MailerOptions = {
     },
   },
   transport: {
-    host: 'mail.lojasbecker.com',
-    port: 587,
+    host: env.MAIL_HOST,
+    port: env.MAIL_PORT,
     ignoreTLS: true,
     secure: false,
     auth: {
-      user: 'mailserver',
-      pass: 'userpasswd',
+      user: env.MAIL_USER,
+      pass: env.MAIL_PASS,
     },
   },
 };
