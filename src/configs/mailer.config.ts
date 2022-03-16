@@ -12,7 +12,7 @@ const env = load({
 
 export const mailerConfig: MailerOptions = {
   template: {
-    dir: path.resolve(__dirname, '..', 'templates'),
+    dir: path.resolve(__dirname, '..', '..', 'templates'),
     adapter: new HandlebarsAdapter(),
     options: {
       extName: '.hbs',
@@ -22,7 +22,7 @@ export const mailerConfig: MailerOptions = {
   transport: {
     host: env.MAIL_HOST,
     port: env.MAIL_PORT,
-    ignoreTLS: true,
+    ignoreTLS: false,
     secure: false,
     auth: {
       user: env.MAIL_USER,

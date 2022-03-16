@@ -34,9 +34,9 @@ export class AuthService {
       );
       const mail = {
         to: user.email,
-        from: 'gestor@lojasbecker.com',
+        from: 'welter.mateus@gmail.com',
         subject: 'Email de confirmação',
-        template: 'email-confirmation',
+        template: './../../templates/email-confirmation',
         context: {
           token: user.confirmationToken,
         },
