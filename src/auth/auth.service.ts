@@ -36,7 +36,7 @@ export class AuthService {
         to: user.email,
         from: 'welter.mateus@gmail.com',
         subject: 'Email de confirmação',
-        template: './../../templates/email-confirmation',
+        template: 'email-confirmation',
         context: {
           token: user.confirmationToken,
         },
