@@ -12,7 +12,7 @@ const env = load({
 
 export const mailerConfig: MailerOptions = {
   template: {
-    dir: path.resolve(__dirname, '..', '..', 'templates'),
+    dir: path.resolve(__dirname, '..', 'templates'),
     adapter: new HandlebarsAdapter(),
     options: {
       extName: '.hbs',

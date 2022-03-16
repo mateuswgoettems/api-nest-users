@@ -8,6 +8,8 @@ RUN yarn --prod
 
 COPY dist/ .
 
+COPY templates/ templates/
+
 COPY .env .
 
 CMD ["node", "main"]
