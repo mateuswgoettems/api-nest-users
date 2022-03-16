@@ -80,4 +80,8 @@ jobs:
     steps:
       - name: pull image in workers
         run: |
+          sudo su
+          /home/ubuntu/deploy-to-swarm.sh
+      - name: pull the compose file in manager
+        run: |
           docker service update --force users_template-users-api
